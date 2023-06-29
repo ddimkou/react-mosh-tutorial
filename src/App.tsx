@@ -1,21 +1,11 @@
-import Alert from "./components/Alert";
-import Button from "./components/Button";
-import { useState } from "react";
-
+import React from "react";
+import Form from "./components/Form";
+import "./components/index.css";
 const App = () => {
-  const [alertVisible, setAlertVisible] = useState(false);
-
-  const handleVisible = () => {
-    setAlertVisible(true);
-  };
-  const handleDisable = () => {
-    setAlertVisible(false);
-  };
   return (
-    <div>
-      {alertVisible && <Alert handleDisable={handleDisable}>my alert</Alert>}
-      <Button handleVisible={handleVisible} />
-    </div>
+    <>
+      <Form />
+    </>
   );
 };
 
