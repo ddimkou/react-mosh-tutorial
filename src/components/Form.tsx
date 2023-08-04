@@ -1,23 +1,35 @@
+import { useRef } from "react";
+import { FieldValues, useForm } from "react-hook-form";
+
 const Form = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("submitted");
-  };
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data: FieldValues) => console.log(data);
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name:
           </label>
-          <input id="name" type="text" className="form-control" />
+          <input
+            {...register("name")}
+            id="name"
+            type="text"
+            className="form-control"
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="age" className="form-label">
             Age
           </label>
-          <input id="age" type="number" className="form-control" />
+          <input
+            {...register("age")}
+            id="age"
+            type="number"
+            className="form-control"
+          />
         </div>
         <button className="btn btn-primary" type="submit">
           Submit1
