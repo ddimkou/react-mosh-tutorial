@@ -20,7 +20,7 @@ const Form = () => {
           <input id="age" type="number" className="form-control" />
         </div>
         <button className="btn btn-primary" type="submit">
-          Submit
+          Submit1
         </button>
       </form>
     </>
